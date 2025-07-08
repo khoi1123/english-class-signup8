@@ -9,26 +9,16 @@ export default function App() {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await fetch("https://sheetdb.io/api/v1/uxf4yasogukwy", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ data: form })
-      });
-
-      if (!response.ok) {
-        throw new Error("Lỗi gửi dữ liệu");
-      }
-
-      setSubmitted(true);
-    } catch (error) {
-      alert("Gửi dữ liệu thất bại. Vui lòng kiểm tra lại cấu hình.");
-      console.error(error);
-    }
-  };
+  e.preventDefault();
+  await fetch("https://sheetdb.io/api/v1/4hw45peonj95w", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ data: form }),
+  });
+  setSubmitted(true);
+};
 
   return (
     <div className="flex items-center justify-center min-h-screen px-4 py-8">
