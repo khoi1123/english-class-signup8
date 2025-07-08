@@ -11,7 +11,7 @@ export default function App() {
   const handleSubmit = async (e) => {
   e.preventDefault();
   try {
-    const response = await fetch("https://sheetdb.io/api/v1/rgx1z1rtnxpxb", {
+    const response = await fetch("https://sheetdb.io/api/v1/0ehumlynlqpo2", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
