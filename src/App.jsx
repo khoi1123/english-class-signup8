@@ -10,6 +10,11 @@ export default function App() {
 
   const handleSubmit = async (e) => {
   e.preventDefault();
+    const isValid = form.email.includes("@") || /^[0-9]{9,11}$/.test(form.email);
+if (!isValid) {
+  alert("Vui lòng nhập email hợp lệ hoặc số điện thoại.");
+  return;
+}
   try {
     const response = await fetch("https://sheetdb.io/api/v1/0ehumlynlqpo2", {
       method: "POST",
@@ -52,7 +57,7 @@ export default function App() {
             />
             <input
               name="email"
-              type="email"
+              type="text"
               placeholder="Email hoặc SĐT liên hệ"
               value={form.email}
               onChange={handleChange}
