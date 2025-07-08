@@ -10,14 +10,24 @@ export default function App() {
 
   const handleSubmit = async (e) => {
   e.preventDefault();
-  await fetch("https://sheetdb.io/api/v1/rgx1z1rtnxpxb", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ data: form }),
-  });
-  setSubmitted(true);
+  try {
+    const response = await fetch("https://sheetdb.io/api/v1/rgx1z1rtnxpxb", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ data: form }),
+    });
+
+    if (!response.ok) {
+      throw new Error("Gửi dữ liệu thất bại");
+    }
+
+    setSubmitted(true);
+  } catch (err) {
+    console.error("Lỗi gửi dữ liệu:", err);
+    alert("❌ Không gửi được dữ liệu. Vui lòng kiểm tra link SheetDB, chia sẻ sheet và tên cột.");
+  }
 };
 
   return (
