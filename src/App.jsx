@@ -84,6 +84,9 @@ if (!isValid) {
             🎉 Cảm ơn bạn đã đăng ký! Chúng tôi sẽ liên hệ lại sớm nhất 💌
           </div>
         )}
+<p className="text-center text-sm text-gray-400 mt-6">
+  Design by <span className="text-pink-600 font-semibold">Khơi Phạm</span>
+</p>
       </div>
     </div>
   );
