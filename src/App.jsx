@@ -38,6 +38,9 @@ if (!isValid) {
   return (
     <div className="flex items-center justify-center min-h-screen px-4 py-8">
       <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full p-8 space-y-6">
+        <div className="flex justify-center">
+  <img src="/logo.png" alt="Logo" className="w-24 h-24 object-contain mb-4" />
+</div>
         <h1 className="text-4xl font-extrabold text-center text-pink-600 drop-shadow">
           Đăng ký lớp học tiếng Anh
         </h1>
